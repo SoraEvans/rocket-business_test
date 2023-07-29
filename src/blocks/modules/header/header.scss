@@ -1,0 +1,115 @@
+.header-mobile, .header-desktop {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.header {
+    width: 100%;
+    color: $green-text-color;
+}
+
+@media (max-width: 767px) {
+    .header-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 17px;
+
+        svg {
+            width: 80px;
+            height: 19px;
+
+            use {
+                fill: $secondary-green;
+            }
+        }
+
+        .header-contacts {
+            display: flex;
+            flex-direction: column;
+            font-size: 13px;
+            text-align: right;
+
+            span {
+                &:first-child {
+                    font-size: 16px;
+                    font-family: "PT Sans Caption - Bold", serif;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .header-desktop {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1140px;
+        margin: auto;
+        padding: 20px 17px;
+
+        .logo {
+            width: 90px;
+            height: 27px;
+            margin-right: 23px;
+
+            use {
+                fill: $secondary-green;
+            }
+        }
+
+        .mark {
+            width: 14px;
+            height: 19px;
+            margin-right: 6px;
+        }
+
+        .header-number {
+            display: flex;
+            align-items: center;
+
+            svg {
+                width: auto;
+                height: 28px;
+                margin-right: 9px;
+            }
+        }
+
+        .header-button {
+            background-color: $secondary-green;
+            color: $white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-left: 35px;
+
+            &:hover, &:active {
+                background-color: $hover-green;
+            }
+        }
+
+        .header-contacts {
+            display: flex;
+            flex-direction: column;
+            font-size: 14px;
+            text-align: left;
+
+            span {
+                color: $gray-text-color;
+                margin-left: 20px;
+
+                &:first-child {
+                    font-size: 14px;
+                    color: $green-text-color;
+                    margin: 0;
+                    font-family: "PT Sans Caption - Regular", serif;
+                }
+            }
+        }
+    }
+}

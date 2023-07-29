@@ -1,0 +1,120 @@
+.burger-menu {
+    z-index: 1;
+
+    .menu {
+        position: absolute;
+        z-index: 1;
+        top: 73px;
+        left: 0;
+        width: 0;
+        height: 1011px;
+        margin: 0;
+        transition: width 0.7s ease-out;
+        background: rgb(69 146 127 / 90%);
+
+        .menu-content {
+            padding: 48px 19px;
+            transition: opacity 0.4s ease-out;
+            opacity: 1;
+
+            .button {
+                background-color: $light-white;
+                color: $main-green;
+                border: none;
+                padding: 12px 24px;
+                border-radius: 50px;
+                cursor: pointer;
+                margin-top: 24px;
+
+                &:hover, &:active {
+                    background-color: $hover-green;
+                }
+            }
+        }
+
+        &.active {
+            width: 100%;
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.anim-opacity {
+    opacity: 0 !important;
+}
+
+.menu-toggle {
+    position: absolute;
+    z-index: 2;
+    top: 25px;
+    width: 37px;
+    height: 5px;
+    padding: 9.1px 0;
+    cursor: pointer;
+    border-radius: 50%;
+
+    &:hover {
+        &::before, &::after {
+            background: $main-green;
+        }
+    }
+
+    &:active {
+        &::before, &::after {
+            background: $main-green;
+        }
+    }
+
+    span {
+        display: block;
+        height: 4px;
+        overflow: hidden;
+        transition: background 0.3s ease-in-out;
+        text-indent: 100%;
+        background: $main-green;
+        white-space: nowrap;
+    }
+
+    &::before, &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 37px;
+        height: 4px;
+        transition: width 0.2s ease-in-out, background 0.2s ease-in-out, transform 0.2s ease-in-out, top 0.2s ease-in-out, bottom 0.2s ease-in-out, left 0.2s ease-in-out, right 0.2s ease-in-out;
+        background: $main-green;
+        transform-origin: center center;
+    }
+
+    &::before {
+        top: -3px;
+    }
+
+    &::after {
+        bottom: -1.7px;
+    }
+
+    &.menu-open {
+        span {
+            background: rgb(255 255 255 / 0%);
+        }
+
+        &::before {
+            top: 10px;
+            transform: rotate(-45deg);
+        }
+
+        &::after {
+            bottom: 9px;
+            transform: rotate(45deg);
+        }
+
+        &::before, &::after {
+            width: 37px;
+            background: $main-green;
+        }
+    }
+}

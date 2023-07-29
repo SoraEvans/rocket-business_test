@@ -1,0 +1,270 @@
+.carousel {
+    .carousel-inner .carousel-item.active, .carousel-inner .carousel-item-start, .carousel-inner .carousel-item-next, .carousel-inner .carousel-item-prev {
+        display: flex;
+    }
+
+    ul {
+        padding-left: 17px;
+
+        li {
+            width: 271px;
+            color: $main-green;
+            margin-bottom: 12px;
+
+            span {
+                color: $green-text-color;
+            }
+        }
+    }
+
+    .card {
+        color: $green-text-color;
+    }
+
+    .carousel-inner {
+        background-color: $carousel-back;
+    }
+
+    .carousel-indicator-custom {
+        align-items: center;
+        height: 100%;
+        margin: 0;
+    }
+
+    .carousel-control-next, .carousel-control-prev {
+        z-index: 3;
+    }
+
+    .social-carousel-helper {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .carousel-indicators [data-bs-target] {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border-bottom: 0;
+        border-top: 0;
+        margin: 0 8px;
+    }
+
+    .b-carousel__prev, .b-carousel__next {
+        z-index: 3;
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        border: none;
+        transform: translateY(-33%) translateZ(0);
+        background: transparent;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+    .b-carousel__wrap {
+        display: flex;
+        position: relative;
+        height: 100%;
+        transition: transform 0.5s;
+        will-change: transform;
+    }
+
+    .b-carousel__item {
+        display: flex;
+        flex: 0 0 100%;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .b-carousel__img {
+        display: block;
+        width: 100%;
+    }
+
+    .btn-block {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .arrow-block {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+
+        .js-carousel__counter {
+            margin: 0 34px;
+            color: $green-text-color;
+        }
+
+        svg {
+            width: 34px;
+            height: 17px;
+
+            &:hover, &:active {
+                use {
+                    fill: $secondary-green;
+                }
+            }
+
+            use {
+                fill: $arrow-color;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .carousel {
+        .card-body {
+            padding: 23px;
+        }
+
+        h2 {
+            display: flex;
+            flex-direction: column;
+            text-transform: uppercase;
+
+            span {
+                font-size: 14px;
+                margin-bottom: 12px;
+                text-transform: lowercase;
+            }
+        }
+
+        .b-carousel {
+            box-sizing: border-box;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding-bottom: 85px;
+        }
+
+        .arrow-block {
+            bottom: 10px;
+        }
+
+        .carousel__price {
+            font-size: 18px;
+            margin-bottom: 27px;
+
+            span {
+                font-size: 14px;
+                text-decoration: line-through;
+                color: $gray-text-color;
+            }
+        }
+
+        .button {
+            background-color: $secondary-green;
+            color: $white;
+            border: none;
+            padding: 11px 29px;
+            border-radius: 50px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: $secondary-green;
+            border: 1px solid $secondary-green;
+        }
+
+        .img-triangle-block {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .carousel {
+        .carousel-img-mobile {
+            display: none;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .card-body {
+            padding: 53px 0 0 63px;
+        }
+
+        h2 {
+            display: flex;
+            flex-direction: column;
+            text-transform: uppercase;
+            font-size: 38px;
+
+            span {
+                font-size: 22px;
+                margin-bottom: 16px;
+                text-transform: lowercase;
+            }
+        }
+
+        .b-carousel {
+            box-sizing: border-box;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding-bottom: 145px;
+        }
+
+        .arrow-block {
+            bottom: 55px;
+        }
+
+        .img-triangle-block {
+            height: 440px;
+        }
+
+        .triangle {
+            position: absolute;
+            border-bottom: 440px solid #e2f0ef;
+            border-right: 100px solid transparent;
+            width: 0;
+        }
+
+        .carousel__price {
+            font-size: 18px;
+            margin: 33px 0 27px;
+
+            span {
+                font-size: 14px;
+                text-decoration: line-through;
+                color: $gray-text-color;
+            }
+        }
+
+        .button {
+            background-color: $secondary-green;
+            color: $white;
+            border: none;
+            padding: 11px 58px;
+            margin-right: 14px;
+            border-radius: 50px;
+            font-size: 14px;
+            cursor: pointer;
+
+            &:hover, &:active {
+                background-color: $hover-green;
+            }
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: $secondary-green;
+            border: 1px solid $secondary-green;
+
+            &:hover, &:active {
+                background-color: $secondary-green;
+                color: $white;
+            }
+        }
+    }
+}
